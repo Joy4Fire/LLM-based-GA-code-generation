@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+.env
+.env.*
+
+results/gpt4o_baseline/
+examples/debug/

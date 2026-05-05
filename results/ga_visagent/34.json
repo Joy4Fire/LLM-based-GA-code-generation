@@ -1,0 +1,747 @@
+{
+  "index": 34,
+  "success": true,
+  "user_input": "Create a line L (passing through points (0,0,0) and (1,1,1)) and a plane Π (passing through (0,0,0) with normal vector (0,0,1)). Calculate their intersection point P. I need Python code.Calculation process: 1. Line and plane creation. 2. Intersection point calculation: $$ P = L \\wedge \\Pi $$",
+  "function_name": "CalculateLinePlaneIntersection",
+  "target_language": "PYTHON",
+  "target_space": "unknown",
+  "task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          1,
+          2
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_point_and_normal",
+        "operation": "plane_from_point_and_normal",
+        "inputs": [],
+        "outputs": [
+          "Pi"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "Pi",
+          "type": "plane",
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "L",
+          "Pi"
+        ],
+        "outputs": [
+          "P"
+        ],
+        "depends_on": [
+          3,
+          4
+        ],
+        "object_specs": {
+          "name": "P",
+          "type": "point",
+          "from": [
+            "L",
+            "Pi"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "validated_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          1,
+          2
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_point_and_normal",
+        "operation": "plane_from_point_and_normal",
+        "inputs": [],
+        "outputs": [
+          "Pi"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "Pi",
+          "type": "plane",
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "L",
+          "Pi"
+        ],
+        "outputs": [
+          "P"
+        ],
+        "depends_on": [
+          3,
+          4
+        ],
+        "object_specs": {
+          "name": "P",
+          "type": "point",
+          "from": [
+            "L",
+            "Pi"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "task_ir_validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "symbol_table": {
+      "P1": {
+        "type": "point",
+        "defined_by": 1,
+        "operation": "construct_point"
+      },
+      "P2": {
+        "type": "point",
+        "defined_by": 2,
+        "operation": "construct_point"
+      },
+      "L": {
+        "type": "line",
+        "defined_by": 3,
+        "operation": "line_from_two_points"
+      },
+      "Pi": {
+        "type": "plane",
+        "defined_by": 4,
+        "operation": "plane_from_point_and_normal"
+      },
+      "P": {
+        "type": "point",
+        "defined_by": 5,
+        "operation": "outer_product"
+      }
+    },
+    "defined_symbols": [
+      "L",
+      "P",
+      "P1",
+      "P2",
+      "Pi"
+    ]
+  },
+  "operation_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P1.",
+          "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
+          "parameters": [
+            "a1",
+            "b1",
+            "c1"
+          ],
+          "output": "P1"
+        },
+        "variable_assignments": {
+          "a1": 0,
+          "b1": 0,
+          "c1": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P2.",
+          "formula": "P2 = a2*e1 + b2*e2 + c2*e3 + 0.5*(a2*a2 + b2*b2 + c2*c2)*einf + e0",
+          "parameters": [
+            "a2",
+            "b2",
+            "c2"
+          ],
+          "output": "P2"
+        },
+        "variable_assignments": {
+          "a2": 1,
+          "b2": 1,
+          "c2": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          1,
+          2
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA line L from P1 and P2.",
+          "formula": "L = P1 ^ P2 ^ einf",
+          "parameters": [
+            "P1",
+            "P2"
+          ],
+          "output": "L"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_point_and_normal",
+        "operation": "plane_from_point_and_normal",
+        "inputs": [],
+        "outputs": [
+          "Pi"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "Pi",
+          "type": "plane",
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA plane Pi from point and normal.",
+          "formula": "d4 = -(nx4*x4 + ny4*y4 + nz4*z4); Pi = nx4*e1 + ny4*e2 + nz4*e3 + d4*einf",
+          "parameters": [
+            "x4",
+            "y4",
+            "z4",
+            "nx4",
+            "ny4",
+            "nz4"
+          ],
+          "output": "Pi"
+        },
+        "variable_assignments": {
+          "x4": 0,
+          "y4": 0,
+          "z4": 0,
+          "nx4": 0,
+          "ny4": 0,
+          "nz4": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "L",
+          "Pi"
+        ],
+        "outputs": [
+          "P"
+        ],
+        "depends_on": [
+          3,
+          4
+        ],
+        "object_specs": {
+          "name": "P",
+          "type": "point",
+          "from": [
+            "L",
+            "Pi"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Compute outer product P of L and Pi.",
+          "formula": "P = L ^ Pi",
+          "parameters": [
+            "L",
+            "Pi"
+          ],
+          "output": "P"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "subtask_execution_order": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "subtask_results": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a1=0; b1=0; c1=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a2=1; b2=1; c2=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          1,
+          2
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?L=P1^P2^einf;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_point_and_normal",
+        "operation": "plane_from_point_and_normal",
+        "inputs": [],
+        "outputs": [
+          "Pi"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "Pi",
+          "type": "plane",
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?d4=-(nx4*x4+ny4*y4+nz4*z4);\n?Pi=nx4*e1+ny4*e2+nz4*e3+d4*einf;"
+        },
+        "variable_assignments": {
+          "code": "x4=0; y4=0; z4=0; nx4=0; ny4=0; nz4=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "L",
+          "Pi"
+        ],
+        "outputs": [
+          "P"
+        ],
+        "depends_on": [
+          3,
+          4
+        ],
+        "object_specs": {
+          "name": "P",
+          "type": "point",
+          "from": [
+            "L",
+            "Pi"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P=L^Pi;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      }
+    ]
+  },
+  "final_code": "Code to optimize:\n?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?L=P1^P2^einf;\n?d4=-(nx4*x4+ny4*y4+nz4*z4);\n?Pi=nx4*e1+ny4*e2+nz4*e3+d4*einf;\n?P=L^Pi;\n\nVariable assignments:\na1=0; b1=0; c1=0;\na2=1; b2=1; c2=1;\nx4=0; y4=0; z4=0; nx4=0; ny4=0; nz4=1;\n\nMultivectors to be visualized:\nNo need for visualization.",
+  "gaalop_request_result": {
+    "visualizationEnabled": false,
+    "outputMode": "CODE_ONLY",
+    "codegenPlugins": "PYTHON",
+    "algebraPlugins": "ALGEBRA_CGA",
+    "optimization": {
+      "maxima": false,
+      "cse": false
+    },
+    "script": {
+      "multivectorsVisualized": "",
+      "optimizeCode": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?L=P1^P2^einf;\n?d4=-(nx4*x4+ny4*y4+nz4*z4);\n?Pi=nx4*e1+ny4*e2+nz4*e3+d4*einf;\n?P=L^Pi;",
+      "variableAssignments": "a1=0; b1=0; c1=0;\na2=1; b2=1; c2=1;\nx4=0; y4=0; z4=0; nx4=0; ny4=0; nz4=1;",
+      "functionName": "CalculateLinePlaneIntersection"
+    }
+  }
+}

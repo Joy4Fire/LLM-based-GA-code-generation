@@ -1,0 +1,1116 @@
+{
+  "index": 31,
+  "success": true,
+  "user_input": "Create three points P1(1,0,0), P2(0,1,0), P3(0,0,1), visualized in red, green, and blue respectively. Then rotate the entire point system by 90 degrees around the Z-axis and visualize the new point set in blue. I need Python code.Calculation process: 1. Point creation: $$ P_{i} = \\mathbf{x}_{i} + \\frac{1}{2}\\mathbf{x}_{i}^{2} e_{\\infty} + e_{0} $$ 2. Rotation rotor: $$ R = \\cos(45^\\circ) - \\sin(45^\\circ) e_{12} $$ 3. Point rotation: $$ P_{i}' = R P_{i} \\tilde{R} $$",
+  "function_name": "RotatePoints",
+  "target_language": "PYTHON",
+  "target_space": "ALGEBRA_CGA",
+  "task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1",
+              "type": "point",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2",
+              "type": "point",
+              "color": "Green"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_rotor",
+        "operation": "construct_rotor",
+        "inputs": [],
+        "outputs": [
+          "R"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "R",
+          "type": "rotor",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "angle": 90,
+          "angle_unit": "degree"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P1",
+          "R"
+        ],
+        "outputs": [
+          "P1_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1_rotated",
+          "type": "point",
+          "object": "P1",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P2",
+          "R"
+        ],
+        "outputs": [
+          "P2_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2_rotated",
+          "type": "point",
+          "object": "P2",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P3",
+          "R"
+        ],
+        "outputs": [
+          "P3_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3_rotated",
+          "type": "point",
+          "object": "P3",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "validated_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1",
+              "type": "point",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2",
+              "type": "point",
+              "color": "Green"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_rotor",
+        "operation": "construct_rotor",
+        "inputs": [],
+        "outputs": [
+          "R"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "R",
+          "type": "rotor",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "angle": 90,
+          "angle_unit": "degree"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P1",
+          "R"
+        ],
+        "outputs": [
+          "P1_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1_rotated",
+          "type": "point",
+          "object": "P1",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P2",
+          "R"
+        ],
+        "outputs": [
+          "P2_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2_rotated",
+          "type": "point",
+          "object": "P2",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P3",
+          "R"
+        ],
+        "outputs": [
+          "P3_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3_rotated",
+          "type": "point",
+          "object": "P3",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "task_ir_validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "symbol_table": {
+      "P1": {
+        "type": "point",
+        "defined_by": 1,
+        "operation": "construct_point"
+      },
+      "P2": {
+        "type": "point",
+        "defined_by": 2,
+        "operation": "construct_point"
+      },
+      "P3": {
+        "type": "point",
+        "defined_by": 3,
+        "operation": "construct_point"
+      },
+      "R": {
+        "type": "rotor",
+        "defined_by": 4,
+        "operation": "construct_rotor"
+      },
+      "P1_rotated": {
+        "type": "point",
+        "defined_by": 5,
+        "operation": "rotate_object"
+      },
+      "P2_rotated": {
+        "type": "point",
+        "defined_by": 6,
+        "operation": "rotate_object"
+      },
+      "P3_rotated": {
+        "type": "point",
+        "defined_by": 7,
+        "operation": "rotate_object"
+      }
+    },
+    "defined_symbols": [
+      "P1",
+      "P1_rotated",
+      "P2",
+      "P2_rotated",
+      "P3",
+      "P3_rotated",
+      "R"
+    ]
+  },
+  "operation_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1",
+              "type": "point",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P1.",
+          "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
+          "parameters": [
+            "a1",
+            "b1",
+            "c1"
+          ],
+          "output": "P1"
+        },
+        "variable_assignments": {
+          "a1": 1,
+          "b1": 0,
+          "c1": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1",
+              "type": "point",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2",
+              "type": "point",
+              "color": "Green"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P2.",
+          "formula": "P2 = a2*e1 + b2*e2 + c2*e3 + 0.5*(a2*a2 + b2*b2 + c2*c2)*einf + e0",
+          "parameters": [
+            "a2",
+            "b2",
+            "c2"
+          ],
+          "output": "P2"
+        },
+        "variable_assignments": {
+          "a2": 0,
+          "b2": 1,
+          "c2": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2",
+              "type": "point",
+              "color": "Green"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P3.",
+          "formula": "P3 = a3*e1 + b3*e2 + c3*e3 + 0.5*(a3*a3 + b3*b3 + c3*c3)*einf + e0",
+          "parameters": [
+            "a3",
+            "b3",
+            "c3"
+          ],
+          "output": "P3"
+        },
+        "variable_assignments": {
+          "a3": 0,
+          "b3": 0,
+          "c3": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_rotor",
+        "operation": "construct_rotor",
+        "inputs": [],
+        "outputs": [
+          "R"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "R",
+          "type": "rotor",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "angle": 90,
+          "angle_unit": "degree"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct rotor R from axis and angle.",
+          "formula": "axis_norm4 = sqrt(ax4*ax4 + ay4*ay4 + az4*az4); axisB4 = (ax4/axis_norm4)*(e2^e3) + (ay4/axis_norm4)*(e3^e1) + (az4/axis_norm4)*(e1^e2); R = cos(angle4*0.5) - sin(angle4*0.5) * axisB4",
+          "parameters": [
+            "ax4",
+            "ay4",
+            "az4",
+            "angle4"
+          ],
+          "output": "R"
+        },
+        "variable_assignments": {
+          "ax4": 0,
+          "ay4": 0,
+          "az4": 1,
+          "angle4": 1.5707963267948966
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P1",
+          "R"
+        ],
+        "outputs": [
+          "P1_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1_rotated",
+          "type": "point",
+          "object": "P1",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Rotate object P1 with rotor R.",
+          "formula": "P1_rotated = R * P1 * ~R",
+          "parameters": [
+            "P1",
+            "R"
+          ],
+          "output": "P1_rotated"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P2",
+          "R"
+        ],
+        "outputs": [
+          "P2_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2_rotated",
+          "type": "point",
+          "object": "P2",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Rotate object P2 with rotor R.",
+          "formula": "P2_rotated = R * P2 * ~R",
+          "parameters": [
+            "P2",
+            "R"
+          ],
+          "output": "P2_rotated"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P3",
+          "R"
+        ],
+        "outputs": [
+          "P3_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3_rotated",
+          "type": "point",
+          "object": "P3",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Rotate object P3 with rotor R.",
+          "formula": "P3_rotated = R * P3 * ~R",
+          "parameters": [
+            "P3",
+            "R"
+          ],
+          "output": "P3_rotated"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "subtask_execution_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "subtask_results": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1",
+              "type": "point",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a1=1; b1=0; c1=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Red;\n:P1;"
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2",
+              "type": "point",
+              "color": "Green"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a2=0; b2=1; c2=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Green;\n:P2;"
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a3=0; b3=0; c3=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:P3;"
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_rotor",
+        "operation": "construct_rotor",
+        "inputs": [],
+        "outputs": [
+          "R"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "R",
+          "type": "rotor",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "angle": 90,
+          "angle_unit": "degree"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?axis_norm4=sqrt(ax4*ax4+ay4*ay4+az4*az4);\n?axisB4=(ax4/axis_norm4)*(e2^e3)+(ay4/axis_norm4)*(e3^e1)+(az4/axis_norm4)*(e1^e2);\n?R=cos(angle4*0.5)-sin(angle4*0.5)*axisB4;"
+        },
+        "variable_assignments": {
+          "code": "ax4=0; ay4=0; az4=1; angle4=1.5707963267948966;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P1",
+          "R"
+        ],
+        "outputs": [
+          "P1_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1_rotated",
+          "type": "point",
+          "object": "P1",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P1_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P1_rotated=R*P1*~R;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:P1_rotated;"
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P2",
+          "R"
+        ],
+        "outputs": [
+          "P2_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2_rotated",
+          "type": "point",
+          "object": "P2",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P2_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P2_rotated=R*P2*~R;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:P2_rotated;"
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "rotate_cga_object",
+        "operation": "rotate_object",
+        "inputs": [
+          "P3",
+          "R"
+        ],
+        "outputs": [
+          "P3_rotated"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3_rotated",
+          "type": "point",
+          "object": "P3",
+          "rotor": "R"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "P3_rotated",
+              "type": "point",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?P3_rotated=R*P3*~R;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:P3_rotated;"
+        }
+      }
+    ]
+  },
+  "final_code": "Code to optimize:\n?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?axis_norm4=sqrt(ax4*ax4+ay4*ay4+az4*az4);\n?axisB4=(ax4/axis_norm4)*(e2^e3)+(ay4/axis_norm4)*(e3^e1)+(az4/axis_norm4)*(e1^e2);\n?R=cos(angle4*0.5)-sin(angle4*0.5)*axisB4;\n?P1_rotated=R*P1*~R;\n?P2_rotated=R*P2*~R;\n?P3_rotated=R*P3*~R;\n\nVariable assignments:\na1=1; b1=0; c1=0;\na2=0; b2=1; c2=0;\na3=0; b3=0; c3=1;\nax4=0; ay4=0; az4=1; angle4=1.5707963267948966;\n\nMultivectors to be visualized:\n:Red;\n:P1;\n:Green;\n:P2;\n:Blue;\n:P3;\n:Blue;\n:P1_rotated;\n:Blue;\n:P2_rotated;\n:Blue;\n:P3_rotated;",
+  "gaalop_request_result": {
+    "visualizationEnabled": true,
+    "outputMode": "CODE_AND_VISUALIZATION",
+    "codegenPlugins": "PYTHON",
+    "algebraPlugins": "ALGEBRA_CGA",
+    "optimization": {
+      "maxima": false,
+      "cse": false
+    },
+    "script": {
+      "multivectorsVisualized": ":Red;\n:P1;\n:Green;\n:P2;\n:Blue;\n:P3;\n:Blue;\n:P1_rotated;\n:Blue;\n:P2_rotated;\n:Blue;\n:P3_rotated;",
+      "optimizeCode": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?axis_norm4=sqrt(ax4*ax4+ay4*ay4+az4*az4);\n?axisB4=(ax4/axis_norm4)*(e2^e3)+(ay4/axis_norm4)*(e3^e1)+(az4/axis_norm4)*(e1^e2);\n?R=cos(angle4*0.5)-sin(angle4*0.5)*axisB4;\n?P1_rotated=R*P1*~R;\n?P2_rotated=R*P2*~R;\n?P3_rotated=R*P3*~R;",
+      "variableAssignments": "a1=1; b1=0; c1=0;\na2=0; b2=1; c2=0;\na3=0; b3=0; c3=1;\nax4=0; ay4=0; az4=1; angle4=1.5707963267948966;",
+      "functionName": "RotatePoints"
+    }
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "index": 39,
+  "success": true,
+  "user_input": "In conformal space, create points P1(1,0,0) and P2(0,1,0), calculate their outer product P1∧P2, and output the result. I need Python code.Calculation process: 1. Point representation: $$ P = \\mathbf{x} + \\frac{1}{2}\\mathbf{x}^{2} e_{\\infty} + e_{0} $$ 2. Outer product formula: $$ P_{1} \\wedge P_{2} $$",
+  "function_name": "CalculateOuterProduct",
+  "target_language": "PYTHON",
+  "target_space": "ALGEBRA_CGA",
+  "task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "M"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "M",
+          "type": "multivector",
+          "from": [
+            "P1",
+            "P2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "validated_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "M"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "M",
+          "type": "multivector",
+          "from": [
+            "P1",
+            "P2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "task_ir_validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "symbol_table": {
+      "P1": {
+        "type": "point",
+        "defined_by": 1,
+        "operation": "construct_point"
+      },
+      "P2": {
+        "type": "point",
+        "defined_by": 2,
+        "operation": "construct_point"
+      },
+      "M": {
+        "type": "multivector",
+        "defined_by": 3,
+        "operation": "outer_product"
+      }
+    },
+    "defined_symbols": [
+      "M",
+      "P1",
+      "P2"
+    ]
+  },
+  "operation_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P1.",
+          "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
+          "parameters": [
+            "a1",
+            "b1",
+            "c1"
+          ],
+          "output": "P1"
+        },
+        "variable_assignments": {
+          "a1": 1,
+          "b1": 0,
+          "c1": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P2.",
+          "formula": "P2 = a2*e1 + b2*e2 + c2*e3 + 0.5*(a2*a2 + b2*b2 + c2*c2)*einf + e0",
+          "parameters": [
+            "a2",
+            "b2",
+            "c2"
+          ],
+          "output": "P2"
+        },
+        "variable_assignments": {
+          "a2": 0,
+          "b2": 1,
+          "c2": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "M"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "M",
+          "type": "multivector",
+          "from": [
+            "P1",
+            "P2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Compute outer product M of P1 and P2.",
+          "formula": "M = P1 ^ P2",
+          "parameters": [
+            "P1",
+            "P2"
+          ],
+          "output": "M"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      }
+    ]
+  },
+  "subtask_execution_order": [
+    1,
+    2,
+    3
+  ],
+  "subtask_results": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a1=1; b1=0; c1=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a2=0; b2=1; c2=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "M"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "M",
+          "type": "multivector",
+          "from": [
+            "P1",
+            "P2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?M=P1^P2;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      }
+    ]
+  },
+  "final_code": "Code to optimize:\n?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?M=P1^P2;\n\nVariable assignments:\na1=1; b1=0; c1=0;\na2=0; b2=1; c2=0;\n\nMultivectors to be visualized:\nNo need for visualization.",
+  "gaalop_request_result": {
+    "visualizationEnabled": false,
+    "outputMode": "CODE_ONLY",
+    "codegenPlugins": "PYTHON",
+    "algebraPlugins": "ALGEBRA_CGA",
+    "optimization": {
+      "maxima": false,
+      "cse": false
+    },
+    "script": {
+      "multivectorsVisualized": "",
+      "optimizeCode": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?M=P1^P2;",
+      "variableAssignments": "a1=1; b1=0; c1=0;\na2=0; b2=1; c2=0;",
+      "functionName": "CalculateOuterProduct"
+    }
+  }
+}

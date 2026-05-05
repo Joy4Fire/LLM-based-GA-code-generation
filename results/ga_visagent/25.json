@@ -1,0 +1,1360 @@
+{
+  "index": 25,
+  "success": true,
+  "user_input": "In conformal space, create two planes Π1 and Π2. Π1 passes through points (0,0,0), (1,0,0), (0,1,0). Π2 passes through points (0,0,1), (1,0,1), (0,1,1). Visualize Π1 as blue and Π2 as red. Finally, calculate their intersection line L and visualize it as green. I need Python code.Calculation process: 1. Plane representation: $$ \\Pi=P_{1}\\wedge P_{2}\\wedge P_{3}\\wedge e_{\\infty} $$ 2. Intersection line representation: $$ L=\\Pi_{1}\\wedge \\Pi_{2} $$",
+  "function_name": "CalculatePlaneIntersection",
+  "target_language": "PYTHON",
+  "target_space": "ALGEBRA_CGA",
+  "task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "outputs": [
+          "Pi1"
+        ],
+        "depends_on": [
+          1,
+          2,
+          3
+        ],
+        "object_specs": {
+          "name": "Pi1",
+          "type": "plane",
+          "from": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi1",
+              "type": "plane",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P5"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P5",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P6"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P6",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 8,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P4",
+          "P5",
+          "P6"
+        ],
+        "outputs": [
+          "Pi2"
+        ],
+        "depends_on": [
+          5,
+          6,
+          7
+        ],
+        "object_specs": {
+          "name": "Pi2",
+          "type": "plane",
+          "from": [
+            "P4",
+            "P5",
+            "P6"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi2",
+              "type": "plane",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 9,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "Pi1",
+          "Pi2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          4,
+          8
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "Pi1",
+            "Pi2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L",
+              "type": "line",
+              "color": "Green"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "validated_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "outputs": [
+          "Pi1"
+        ],
+        "depends_on": [
+          1,
+          2,
+          3
+        ],
+        "object_specs": {
+          "name": "Pi1",
+          "type": "plane",
+          "from": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi1",
+              "type": "plane",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P5"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P5",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P6"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P6",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 8,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P4",
+          "P5",
+          "P6"
+        ],
+        "outputs": [
+          "Pi2"
+        ],
+        "depends_on": [
+          5,
+          6,
+          7
+        ],
+        "object_specs": {
+          "name": "Pi2",
+          "type": "plane",
+          "from": [
+            "P4",
+            "P5",
+            "P6"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi2",
+              "type": "plane",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 9,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "Pi1",
+          "Pi2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          4,
+          8
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "Pi1",
+            "Pi2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L",
+              "type": "line",
+              "color": "Green"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "task_ir_validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "symbol_table": {
+      "P1": {
+        "type": "point",
+        "defined_by": 1,
+        "operation": "construct_point"
+      },
+      "P2": {
+        "type": "point",
+        "defined_by": 2,
+        "operation": "construct_point"
+      },
+      "P3": {
+        "type": "point",
+        "defined_by": 3,
+        "operation": "construct_point"
+      },
+      "Pi1": {
+        "type": "plane",
+        "defined_by": 4,
+        "operation": "plane_from_three_points"
+      },
+      "P4": {
+        "type": "point",
+        "defined_by": 5,
+        "operation": "construct_point"
+      },
+      "P5": {
+        "type": "point",
+        "defined_by": 6,
+        "operation": "construct_point"
+      },
+      "P6": {
+        "type": "point",
+        "defined_by": 7,
+        "operation": "construct_point"
+      },
+      "Pi2": {
+        "type": "plane",
+        "defined_by": 8,
+        "operation": "plane_from_three_points"
+      },
+      "L": {
+        "type": "line",
+        "defined_by": 9,
+        "operation": "outer_product"
+      }
+    },
+    "defined_symbols": [
+      "L",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "Pi1",
+      "Pi2"
+    ]
+  },
+  "operation_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P1.",
+          "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
+          "parameters": [
+            "a1",
+            "b1",
+            "c1"
+          ],
+          "output": "P1"
+        },
+        "variable_assignments": {
+          "a1": 0,
+          "b1": 0,
+          "c1": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P2.",
+          "formula": "P2 = a2*e1 + b2*e2 + c2*e3 + 0.5*(a2*a2 + b2*b2 + c2*c2)*einf + e0",
+          "parameters": [
+            "a2",
+            "b2",
+            "c2"
+          ],
+          "output": "P2"
+        },
+        "variable_assignments": {
+          "a2": 1,
+          "b2": 0,
+          "c2": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P3.",
+          "formula": "P3 = a3*e1 + b3*e2 + c3*e3 + 0.5*(a3*a3 + b3*b3 + c3*c3)*einf + e0",
+          "parameters": [
+            "a3",
+            "b3",
+            "c3"
+          ],
+          "output": "P3"
+        },
+        "variable_assignments": {
+          "a3": 0,
+          "b3": 1,
+          "c3": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "outputs": [
+          "Pi1"
+        ],
+        "depends_on": [
+          1,
+          2,
+          3
+        ],
+        "object_specs": {
+          "name": "Pi1",
+          "type": "plane",
+          "from": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi1",
+              "type": "plane",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA plane Pi1 from P1, P2 and P3.",
+          "formula": "Pi1 = P1 ^ P2 ^ P3 ^ einf",
+          "parameters": [
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "output": "Pi1"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi1",
+              "type": "plane",
+              "color": "Blue"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P4.",
+          "formula": "P4 = a4*e1 + b4*e2 + c4*e3 + 0.5*(a4*a4 + b4*b4 + c4*c4)*einf + e0",
+          "parameters": [
+            "a4",
+            "b4",
+            "c4"
+          ],
+          "output": "P4"
+        },
+        "variable_assignments": {
+          "a4": 0,
+          "b4": 0,
+          "c4": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P5"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P5",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P5.",
+          "formula": "P5 = a5*e1 + b5*e2 + c5*e3 + 0.5*(a5*a5 + b5*b5 + c5*c5)*einf + e0",
+          "parameters": [
+            "a5",
+            "b5",
+            "c5"
+          ],
+          "output": "P5"
+        },
+        "variable_assignments": {
+          "a5": 1,
+          "b5": 0,
+          "c5": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P6"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P6",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P6.",
+          "formula": "P6 = a6*e1 + b6*e2 + c6*e3 + 0.5*(a6*a6 + b6*b6 + c6*c6)*einf + e0",
+          "parameters": [
+            "a6",
+            "b6",
+            "c6"
+          ],
+          "output": "P6"
+        },
+        "variable_assignments": {
+          "a6": 0,
+          "b6": 1,
+          "c6": 1
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 8,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P4",
+          "P5",
+          "P6"
+        ],
+        "outputs": [
+          "Pi2"
+        ],
+        "depends_on": [
+          5,
+          6,
+          7
+        ],
+        "object_specs": {
+          "name": "Pi2",
+          "type": "plane",
+          "from": [
+            "P4",
+            "P5",
+            "P6"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi2",
+              "type": "plane",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA plane Pi2 from P4, P5 and P6.",
+          "formula": "Pi2 = P4 ^ P5 ^ P6 ^ einf",
+          "parameters": [
+            "P4",
+            "P5",
+            "P6"
+          ],
+          "output": "Pi2"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi2",
+              "type": "plane",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 9,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "Pi1",
+          "Pi2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          4,
+          8
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "Pi1",
+            "Pi2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L",
+              "type": "line",
+              "color": "Green"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Compute outer product L of Pi1 and Pi2.",
+          "formula": "L = Pi1 ^ Pi2",
+          "parameters": [
+            "Pi1",
+            "Pi2"
+          ],
+          "output": "L"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L",
+              "type": "line",
+              "color": "Green"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "subtask_execution_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "subtask_results": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a1=0; b1=0; c1=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a2=1; b2=0; c2=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a3=0; b3=1; c3=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "outputs": [
+          "Pi1"
+        ],
+        "depends_on": [
+          1,
+          2,
+          3
+        ],
+        "object_specs": {
+          "name": "Pi1",
+          "type": "plane",
+          "from": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi1",
+              "type": "plane",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?Pi1=P1^P2^P3^einf;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:Pi1;"
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a4=0; b4=0; c4=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P5"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P5",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P5=a5*e1+b5*e2+c5*e3+0.5*(a5*a5+b5*b5+c5*c5)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a5=1; b5=0; c5=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 7,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P6"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P6",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            1
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P6=a6*e1+b6*e2+c6*e3+0.5*(a6*a6+b6*b6+c6*c6)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a6=0; b6=1; c6=1;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 8,
+        "task_type": "construct_cga_plane_from_three_points",
+        "operation": "plane_from_three_points",
+        "inputs": [
+          "P4",
+          "P5",
+          "P6"
+        ],
+        "outputs": [
+          "Pi2"
+        ],
+        "depends_on": [
+          5,
+          6,
+          7
+        ],
+        "object_specs": {
+          "name": "Pi2",
+          "type": "plane",
+          "from": [
+            "P4",
+            "P5",
+            "P6"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "Pi2",
+              "type": "plane",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?Pi2=P4^P5^P6^einf;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Red;\n:Pi2;"
+        }
+      },
+      {
+        "task_id": 9,
+        "task_type": "compute_outer_product",
+        "operation": "outer_product",
+        "inputs": [
+          "Pi1",
+          "Pi2"
+        ],
+        "outputs": [
+          "L"
+        ],
+        "depends_on": [
+          4,
+          8
+        ],
+        "object_specs": {
+          "name": "L",
+          "type": "line",
+          "from": [
+            "Pi1",
+            "Pi2"
+          ],
+          "operator": "^"
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L",
+              "type": "line",
+              "color": "Green"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?L=Pi1^Pi2;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Green;\n:L;"
+        }
+      }
+    ]
+  },
+  "final_code": "Code to optimize:\n?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?Pi1=P1^P2^P3^einf;\n?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;\n?P5=a5*e1+b5*e2+c5*e3+0.5*(a5*a5+b5*b5+c5*c5)*einf+e0;\n?P6=a6*e1+b6*e2+c6*e3+0.5*(a6*a6+b6*b6+c6*c6)*einf+e0;\n?Pi2=P4^P5^P6^einf;\n?L=Pi1^Pi2;\n\nVariable assignments:\na1=0; b1=0; c1=0;\na2=1; b2=0; c2=0;\na3=0; b3=1; c3=0;\na4=0; b4=0; c4=1;\na5=1; b5=0; c5=1;\na6=0; b6=1; c6=1;\n\nMultivectors to be visualized:\n:Blue;\n:Pi1;\n:Red;\n:Pi2;\n:Green;\n:L;",
+  "gaalop_request_result": {
+    "visualizationEnabled": true,
+    "outputMode": "CODE_AND_VISUALIZATION",
+    "codegenPlugins": "PYTHON",
+    "algebraPlugins": "ALGEBRA_CGA",
+    "optimization": {
+      "maxima": false,
+      "cse": false
+    },
+    "script": {
+      "multivectorsVisualized": ":Blue;\n:Pi1;\n:Red;\n:Pi2;\n:Green;\n:L;",
+      "optimizeCode": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?Pi1=P1^P2^P3^einf;\n?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;\n?P5=a5*e1+b5*e2+c5*e3+0.5*(a5*a5+b5*b5+c5*c5)*einf+e0;\n?P6=a6*e1+b6*e2+c6*e3+0.5*(a6*a6+b6*b6+c6*c6)*einf+e0;\n?Pi2=P4^P5^P6^einf;\n?L=Pi1^Pi2;",
+      "variableAssignments": "a1=0; b1=0; c1=0;\na2=1; b2=0; c2=0;\na3=0; b3=1; c3=0;\na4=0; b4=0; c4=1;\na5=1; b5=0; c5=1;\na6=0; b6=1; c6=1;",
+      "functionName": "CalculatePlaneIntersection"
+    }
+  }
+}

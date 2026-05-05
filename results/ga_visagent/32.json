@@ -1,0 +1,7 @@
+{
+  "index": 32,
+  "success": false,
+  "user_input": "Create a line L passing through points (0,0,0) and (1,1,1), visualized as green. Then rotate the line by 60 degrees around the X-axis, followed by 30 degrees around the Y-axis, to generate a new line L', visualized in yellow. I need Python code.Calculation process: 1. Line creation: $$ L = P_{1} \\wedge P_{2} \\wedge e_{\\infty} $$ 2. Composite rotation rotor: $$ R = R_{y}(30^\\circ) R_{x}(60^\\circ) $$ 3. Line rotation: $$ L' = R L \\tilde{R} $$",
+  "error": "task_decomposition_node semantic retry failed after 2 retries:\nTask 7 rotate_object second input must be a rotor.",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\大模型\\LLM-based-GA\\test.py\", line 126, in run_batch\n    state = run_main_graph_with_retry(question, index=index)\n  File \"E:\\大模型\\LLM-based-GA\\test.py\", line 100, in run_main_graph_with_retry\n    return run_main_graph(question)\n  File \"E:\\大模型\\LLM-based-GA\\main_graph\\graph.py\", line 22, in run_main_graph\n    state.update(task_decomposition_node(state))\n  File \"E:\\大模型\\LLM-based-GA\\main_graph\\nodes.py\", line 3879, in task_decomposition_node\n    raise ValueError(\nValueError: task_decomposition_node semantic retry failed after 2 retries:\nTask 7 rotate_object second input must be a rotor.\n"
+}

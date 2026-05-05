@@ -1,0 +1,880 @@
+{
+  "index": 40,
+  "success": true,
+  "user_input": "Create L1 passing through points P1(0,0,0) and P2(1,0,0), visualized as red. Create line L2 passing through points P3(0,0,0) and P4(0,1,0), visualized as blue. I need Python code.Calculation process: 1. Point representation: $$ P = \\mathbf{x} + \\frac{1}{2}\\mathbf{x}^{2} e_{\\infty} + e_{0} $$ 2. Line representation: $$ L = P_{1} \\wedge P_{2} \\wedge e_{\\infty} $$",
+  "function_name": "CreateLinesAndVisualize",
+  "target_language": "PYTHON",
+  "target_space": "ALGEBRA_CGA",
+  "task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L1",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L1",
+              "type": "line",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P3",
+          "P4"
+        ],
+        "outputs": [
+          "L2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L2",
+          "type": "line",
+          "from": [
+            "P3",
+            "P4"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L2",
+              "type": "line",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "validated_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L1",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L1",
+              "type": "line",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P3",
+          "P4"
+        ],
+        "outputs": [
+          "L2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L2",
+          "type": "line",
+          "from": [
+            "P3",
+            "P4"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L2",
+              "type": "line",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "task_ir_validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "symbol_table": {
+      "P1": {
+        "type": "point",
+        "defined_by": 1,
+        "operation": "construct_point"
+      },
+      "P2": {
+        "type": "point",
+        "defined_by": 2,
+        "operation": "construct_point"
+      },
+      "L1": {
+        "type": "line",
+        "defined_by": 3,
+        "operation": "line_from_two_points"
+      },
+      "P3": {
+        "type": "point",
+        "defined_by": 4,
+        "operation": "construct_point"
+      },
+      "P4": {
+        "type": "point",
+        "defined_by": 5,
+        "operation": "construct_point"
+      },
+      "L2": {
+        "type": "line",
+        "defined_by": 6,
+        "operation": "line_from_two_points"
+      }
+    },
+    "defined_symbols": [
+      "L1",
+      "L2",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ]
+  },
+  "operation_task_blocks_result": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P1.",
+          "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
+          "parameters": [
+            "a1",
+            "b1",
+            "c1"
+          ],
+          "output": "P1"
+        },
+        "variable_assignments": {
+          "a1": 0,
+          "b1": 0,
+          "c1": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P2.",
+          "formula": "P2 = a2*e1 + b2*e2 + c2*e3 + 0.5*(a2*a2 + b2*b2 + c2*c2)*einf + e0",
+          "parameters": [
+            "a2",
+            "b2",
+            "c2"
+          ],
+          "output": "P2"
+        },
+        "variable_assignments": {
+          "a2": 1,
+          "b2": 0,
+          "c2": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L1",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L1",
+              "type": "line",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA line L1 from P1 and P2.",
+          "formula": "L1 = P1 ^ P2 ^ einf",
+          "parameters": [
+            "P1",
+            "P2"
+          ],
+          "output": "L1"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L1",
+              "type": "line",
+              "color": "Red"
+            }
+          ]
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P3.",
+          "formula": "P3 = a3*e1 + b3*e2 + c3*e3 + 0.5*(a3*a3 + b3*b3 + c3*c3)*einf + e0",
+          "parameters": [
+            "a3",
+            "b3",
+            "c3"
+          ],
+          "output": "P3"
+        },
+        "variable_assignments": {
+          "a3": 0,
+          "b3": 0,
+          "c3": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA point P4.",
+          "formula": "P4 = a4*e1 + b4*e2 + c4*e3 + 0.5*(a4*a4 + b4*b4 + c4*c4)*einf + e0",
+          "parameters": [
+            "a4",
+            "b4",
+            "c4"
+          ],
+          "output": "P4"
+        },
+        "variable_assignments": {
+          "a4": 0,
+          "b4": 1,
+          "c4": 0
+        },
+        "multivectors_to_be_visualized": {
+          "required": false,
+          "objects": []
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P3",
+          "P4"
+        ],
+        "outputs": [
+          "L2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L2",
+          "type": "line",
+          "from": [
+            "P3",
+            "P4"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L2",
+              "type": "line",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "goal": "Construct CGA line L2 from P3 and P4.",
+          "formula": "L2 = P3 ^ P4 ^ einf",
+          "parameters": [
+            "P3",
+            "P4"
+          ],
+          "output": "L2"
+        },
+        "variable_assignments": {},
+        "multivectors_to_be_visualized": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L2",
+              "type": "line",
+              "color": "Blue"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "subtask_execution_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "subtask_results": {
+    "tasks": [
+      {
+        "task_id": 1,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P1",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a1=0; b1=0; c1=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 2,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P2",
+          "type": "point",
+          "coordinates": [
+            1,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a2=1; b2=0; c2=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 3,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P1",
+          "P2"
+        ],
+        "outputs": [
+          "L1"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L1",
+          "type": "line",
+          "from": [
+            "P1",
+            "P2"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L1",
+              "type": "line",
+              "color": "Red"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?L1=P1^P2^einf;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Red;\n:L1;"
+        }
+      },
+      {
+        "task_id": 4,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P3"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P3",
+          "type": "point",
+          "coordinates": [
+            0,
+            0,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a3=0; b3=0; c3=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 5,
+        "task_type": "construct_cga_point",
+        "operation": "construct_point",
+        "inputs": [],
+        "outputs": [
+          "P4"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "P4",
+          "type": "point",
+          "coordinates": [
+            0,
+            1,
+            0
+          ]
+        },
+        "visualization": {
+          "required": false,
+          "objects": []
+        },
+        "code_to_optimize": {
+          "code": "?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;"
+        },
+        "variable_assignments": {
+          "code": "a4=0; b4=1; c4=0;"
+        },
+        "multivectors_to_be_visualized": {
+          "code": "No need for visualization."
+        }
+      },
+      {
+        "task_id": 6,
+        "task_type": "construct_cga_line_from_two_points",
+        "operation": "line_from_two_points",
+        "inputs": [
+          "P3",
+          "P4"
+        ],
+        "outputs": [
+          "L2"
+        ],
+        "depends_on": [],
+        "object_specs": {
+          "name": "L2",
+          "type": "line",
+          "from": [
+            "P3",
+            "P4"
+          ]
+        },
+        "visualization": {
+          "required": true,
+          "objects": [
+            {
+              "name": "L2",
+              "type": "line",
+              "color": "Blue"
+            }
+          ]
+        },
+        "code_to_optimize": {
+          "code": "?L2=P3^P4^einf;"
+        },
+        "variable_assignments": {
+          "code": ""
+        },
+        "multivectors_to_be_visualized": {
+          "code": ":Blue;\n:L2;"
+        }
+      }
+    ]
+  },
+  "final_code": "Code to optimize:\n?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?L1=P1^P2^einf;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;\n?L2=P3^P4^einf;\n\nVariable assignments:\na1=0; b1=0; c1=0;\na2=1; b2=0; c2=0;\na3=0; b3=0; c3=0;\na4=0; b4=1; c4=0;\n\nMultivectors to be visualized:\n:Red;\n:L1;\n:Blue;\n:L2;",
+  "gaalop_request_result": {
+    "visualizationEnabled": true,
+    "outputMode": "CODE_AND_VISUALIZATION",
+    "codegenPlugins": "PYTHON",
+    "algebraPlugins": "ALGEBRA_CGA",
+    "optimization": {
+      "maxima": false,
+      "cse": false
+    },
+    "script": {
+      "multivectorsVisualized": ":Red;\n:L1;\n:Blue;\n:L2;",
+      "optimizeCode": "?P1=a1*e1+b1*e2+c1*e3+0.5*(a1*a1+b1*b1+c1*c1)*einf+e0;\n?P2=a2*e1+b2*e2+c2*e3+0.5*(a2*a2+b2*b2+c2*c2)*einf+e0;\n?L1=P1^P2^einf;\n?P3=a3*e1+b3*e2+c3*e3+0.5*(a3*a3+b3*b3+c3*c3)*einf+e0;\n?P4=a4*e1+b4*e2+c4*e3+0.5*(a4*a4+b4*b4+c4*c4)*einf+e0;\n?L2=P3^P4^einf;",
+      "variableAssignments": "a1=0; b1=0; c1=0;\na2=1; b2=0; c2=0;\na3=0; b3=0; c3=0;\na4=0; b4=1; c4=0;",
+      "functionName": "CreateLinesAndVisualize"
+    }
+  }
+}

@@ -426,7 +426,7 @@ def _build_point_tasks(
                 "task_id": index,
                 "task_type": "construct_cga_point",
                 "code_to_optimize": {
-                    "goal": f"在 CGA 空间中，根据坐标 ({', '.join(coordinate_parameters)}) 创建共形点 {output}。",
+                    "goal": f"Create conformal point {output} in CGA space from coordinates ({', '.join(coordinate_parameters)}).",
                     "formula": formula,
                     "parameters": parameters,
                     "output": output,
@@ -460,7 +460,7 @@ def _build_line_tasks(
 
         parameters = _extract_parameters_from_formula(formula, output)
         point_inputs = [item for item in parameters if re.fullmatch(r"[PX]\d+", item)]
-        goal = f"根据 {', '.join(point_inputs)} 创建直线 {output}。" if point_inputs else f"创建直线 {output}。"
+        goal = f"Create line {output} from {', '.join(point_inputs)}." if point_inputs else f"Create line {output}."
 
         tasks.append(
             {
@@ -519,7 +519,7 @@ def _build_visualize_task(
         "task_id": task_id,
         "task_type": "visualize_objects",
         "code_to_optimize": {
-            "goal": f"可视化 {'、'.join(object_names)}。",
+            "goal": f"Visualize {', '.join(object_names)}.",
             "formula": None,
             "parameters": object_names,
             "output": None,
@@ -565,16 +565,16 @@ def _build_task_block_fallback(user_input: str) -> dict[str, Any]:
             continue
         if "^" in formula or "∧" in formula:
             task_type = "compute_outer_product"
-            goal = f"根据公式计算外积结果 {formula_output}。"
+            goal = f"Compute outer product result {formula_output} from the formula."
         elif "I^{-1}" in formula or "^*" in formula or "对偶" in user_input:
             task_type = "compute_dual"
-            goal = f"根据公式计算对偶结果 {formula_output}。"
+            goal = f"Compute dual result {formula_output} from the formula."
         elif "sqrt" in formula and re.search(r"\bP\b", formula):
             task_type = "decompose_point_pair"
-            goal = f"根据公式分解点对并得到 {formula_output}。"
+            goal = f"Decompose the point pair from the formula and obtain {formula_output}."
         else:
             task_type = "unknown"
-            goal = f"根据公式计算变量 {formula_output}。"
+            goal = f"Compute variable {formula_output} from the formula."
             warnings.append(f"unrecognized task type for formula output {formula_output}")
 
         parameters = _extract_parameters_from_formula(formula, formula_output)

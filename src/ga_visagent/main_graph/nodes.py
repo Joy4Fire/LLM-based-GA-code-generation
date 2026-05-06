@@ -174,7 +174,7 @@ Rules:
       "task_id": 1,
       "task_type": "construct_cga_point",
       "code_to_optimize": {
-        "goal": "在 CGA 空间中生成点 P1，并将其作为红色点集的一部分可视化。",
+        "goal": "Generate point P1 in CGA space and visualize it as part of a red point set.",
         "formula": "P1 = a1*e1 + b1*e2 + c1*e3 + 0.5*(a1*a1 + b1*b1 + c1*c1)*einf + e0",
         "parameters": ["a1", "b1", "c1"],
         "output": "P1"
@@ -1775,7 +1775,7 @@ Global rules:
 29. If the user says "visualize them as a red point set" or "visualize all points as red", attach Red visualization to each point task.
 30. If the user says "visualize P1, P2, P3 as red", each corresponding construct_point task should carry its own Red visualization object.
 31. Never output task_type="visualization" or operation="visualization".
-32. If the user asks for a midpoint / middle point / mid point / 中点, use operation="midpoint".
+32. If the user asks for a midpoint / middle point / mid point, use operation="midpoint".
 33. midpoint is a computed point, so do not use construct_point for the midpoint result.
 34. construct_point is only for explicitly coordinate-defined points.
 35. If the user writes M=(P1+P2)/2, generate one midpoint task with outputs defaulting to ["M"].
